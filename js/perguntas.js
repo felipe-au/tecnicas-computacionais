@@ -4,11 +4,19 @@ export const perguntas = [
 		alternativas: [
 			{
 				texto: "Isso é assustador!",
-				afirmacao: "afirmacao"
+				afirmacao: [
+					"No início ficou com medo do que essa tecnologia pode fazer.",
+					"Achou assustador pensar na velocidade em que a tecnologia está avançando."
+				],
+				proxima: 1
 			},
 			{
 				texto: "Isso é maravilhoso!",
-				afirmacao: "afirmacao"
+				afirmacao: [
+					"Ficou animado com as possibilidades que essa tecnologia pode oferecer.",
+					"Imaginou como a inteligência artificial poderia facilitar tarefas do dia a dia."
+				],
+				proxima: 2
 			}
 		]
 	},
@@ -17,11 +25,19 @@ export const perguntas = [
 		alternativas: [
 			{
 				texto:"Utilizar uma ferramenta de busca na internet que utiliza IA para que ela ajude a encontrar informações relevantes para o trabalho e explique numa linguagem que facilite o entendimento",
-				afirmacao:"afirmacao"
+				afirmacao: [
+					"Usou a inteligência artificial como apoio para encontrar e compreender informações.",
+					"Pesquisou com a ajuda da IA e procurou entender o conteúdo antes de escrever."
+				],
+				proxima: 2
 			},
 			{
 				texto: "Escrever o trabalho com base nas conversas que teve com colegas, algumas pesquisas na internet e conhecimentos próprios sobre o tema.",
-				afirmacao:"afirmacao"
+				afirmacao: [
+					"Preferiu reunir ideias próprias e conversar com colegas antes de escrever.",
+					"Combinou pesquisas e conhecimentos prévios para construir o trabalho."
+				],
+				proxima: 3
 			}
 		]
 	},
@@ -30,11 +46,19 @@ export const perguntas = [
 		alternativas: [
 			{
 				texto:"Me preocupo com as pessoas que perderão seus empregos para máquinas e defendem a importância de proteger os trabalhadores.",
-				afirmacao:"afirmacao"
+				afirmacao: [
+					"Defendeu a importância de proteger quem pode perder o emprego para máquinas.",
+					"Preocupou-se com os trabalhadores afetados pela automação."
+				],
+				proxima: 3
 			},
 			{
 				texto:"Defende a ideia de que a IA pode criar novas oportunidades de emprego e melhorar habilidades humanas.",
-				afirmacao:"afirmacao"
+				afirmacao: [
+					"Acreditou que a inteligência artificial pode criar novas oportunidades de emprego.",
+					"Viu a tecnologia como uma forma de ampliar as habilidades humanas."
+				],
+				proxima: 4
 			}
 		]
 	},
@@ -43,11 +67,19 @@ export const perguntas = [
 		alternativas: [
 			{
 				texto:"Criar uma imagem utilizando uma plataforma de design como o Paint.",
-				afirmacao:"afirmacao"
+				afirmacao: [
+					"Escolheu criar a imagem manualmente, usando uma ferramenta de design.",
+					"Preferiu desenhar a própria representação da inteligência artificial."
+				],
+				proxima: 4
 			},
 			{
 				texto:"Criar uma imagem utilizando um gerador de imagem de IA.",
-				afirmacao:"afirmacao"
+				afirmacao: [
+					"Experimentou um gerador de imagens para transformar suas ideias em uma ilustração.",
+					"Usou a inteligência artificial como ferramenta criativa para produzir a imagem."
+				],
+				proxima: 4
 			}
 		]
 	},
@@ -56,11 +88,17 @@ export const perguntas = [
 		alternativas: [
 			{
 				texto: "O chat pode ser uma tecnologia muito avançada, mas é preciso manter a atenção pois toda máquina erra, por isso revisar o trabalho e contribuir com as perspectivas pessoais é essencial.",
-				afirmacao:"afirmacao"
+				afirmacao: [
+					"Revisou o trabalho e acrescentou perspectivas próprias, lembrando que toda máquina pode errar.",
+					"Defendeu o uso da IA com atenção, revisão e contribuição pessoal."
+				]
 			},
 			{
 				texto: "Escrever comandos para o chat é uma forma de contribuir com o trabalho, por isso não é um problema utilizar o texto inteiro.",
-				afirmacao:"afirmacao"
+				afirmacao: [
+					"Considerou que usar o texto gerado pelo chat já era uma contribuição suficiente.",
+					"Decidiu entregar o texto da IA sem acrescentar alterações próprias."
+				]
 			}
 		]
 	},

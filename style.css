@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Inter:wght@100..900&display=swap');
+
 :root{
     --cor-fundo: #01080E ;
     --cor-principal: #0B0D20 ;
@@ -10,6 +12,7 @@
 body {
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
+    font-family: 'Inter', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,6 +31,48 @@ h1{
     color: var(--cor-destaque);
 }
 
+h1, .caixa-perguntas, .caixa-resultado {
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+.caixa-alternativas {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.caixa-perguntas {
+    display: none;
+}
+
+.caixa-perguntas.mostrar {
+    display: block;
+}
+
+.caixa-alternativas.mostrar {
+    display: flex;
+}
+
+.tela-inicial p {
+    line-height: 1.6;
+}
+
+.caixa-resultado {
+    display: none;
+}
+
+.caixa-resultado.mostrar {
+    display: block;
+}
+
+.caixa-resultado .texto-resultado {
+    line-height: 1.6;
+}
+
+.caixa-resultado button {
+    margin-top: 10px;
+}
+
 button {
     background-color: var(--cor-secundaria);
     color: var(--cor-texto);
@@ -37,7 +82,7 @@ button {
     transition: background-color 0.3s;
 }
 
-button:hover{
+button:hover {
     background-color: var(--cor-destaque);
     color: var(--cor-principal);
 }

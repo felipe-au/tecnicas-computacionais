@@ -1,10 +1,5 @@
-// PARTE 2: dados das duas narrativas.
-// As posições 0, 1 e 2 preservam a organização da Parte 1.
-// entrada = escolha inicial; avancar = próxima etapa da narrativa;
-// salto = avanço ou retorno específico dentro da mesma narrativa.
-// trocar e gameover ficam desativados nesta versão de estudo.
 export const perguntas = [
-	{ // 0 — pergunta inicial
+	{
 		caminho: "inicio",
 		enunciado:
 			"Ao sair da escola, você descobre uma inteligência " +
@@ -23,7 +18,7 @@ export const perguntas = [
 			}
 		]
 	},
-	{ // 1 — A1: início da experimentação
+	{
 		caminho: "A",
 		enunciado:
 			"Você decide experimentar a ferramenta. Na mesma semana, " +
@@ -47,7 +42,7 @@ export const perguntas = [
 			}
 		]
 	},
-	{ // 2 — B1: início da investigação
+	{
 		caminho: "B",
 		enunciado:
 			"Antes de experimentar a ferramenta, você procura entender " +
@@ -71,7 +66,7 @@ export const perguntas = [
 			}
 		]
 	},
-	{ // 3 — A2: conferir informações
+	{
 		caminho: "A",
 		enunciado:
 			"A resposta da IA apresenta uma afirmação sem fonte. " +
@@ -98,7 +93,7 @@ export const perguntas = [
 			}
 		]
 	},
-	{ // 4 — A3: planejar a demonstração
+	{
 		caminho: "A",
 		enunciado:
 			"Você vai demonstrar como uma IA produz respostas. " +
@@ -121,7 +116,7 @@ export const perguntas = [
 			}
 		]
 	},
-	{ // 5 — A4: revisar o material
+	{
 		caminho: "A",
 		enunciado:
 			"Um colega observa que seu material não explica os limites " +
@@ -148,7 +143,7 @@ export const perguntas = [
 			}
 		]
 	},
-	{ // 6 — A5: organizar a apresentação
+	{
 		caminho: "A",
 		enunciado:
 			"Antes da apresentação, você decide como organizar " +
@@ -171,7 +166,7 @@ export const perguntas = [
 			}
 		]
 	},
-	{ // 7 — B2: conferir a origem do áudio
+	{
 		caminho: "B",
 		enunciado:
 			"O áudio não tem uma publicação original identificada. " +
@@ -198,7 +193,7 @@ export const perguntas = [
 			}
 		]
 	},
-	{ // 8 — B3: planejar a orientação
+	{
 		caminho: "B",
 		enunciado:
 			"A escola confirma que o áudio é falso. Você decide " +
@@ -221,7 +216,7 @@ export const perguntas = [
 			}
 		]
 	},
-	{ // 9 — B4: revisar a campanha
+	{
 		caminho: "B",
 		enunciado:
 			"Na revisão da campanha, surge uma dúvida sobre a origem " +
@@ -249,7 +244,7 @@ export const perguntas = [
 			}
 		]
 	},
-	{ // 10 — B5: organizar o encontro
+	{
 		caminho: "B",
 		enunciado:
 			"Você prepara o encontro com os moradores. O que " +
@@ -277,7 +272,6 @@ export const perguntas = [
 			}
 		]
 	},
-	// Posição 11 — substitui o antigo ponto de continuidade A.
 	{
 		caminho: "A",
 		final: "vitoria",
@@ -287,7 +281,6 @@ export const perguntas = [
 			"A missão foi concluída com sucesso. Você venceu!",
 		alternativas: []
 	},
-	// Posição 12 — substitui o antigo ponto de continuidade B.
 	{
 		caminho: "B",
 		final: "vitoria",

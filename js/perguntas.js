@@ -1,105 +1,300 @@
+// PARTE 2: dados das duas narrativas.
+// As posições 0, 1 e 2 preservam a organização da Parte 1.
+// entrada = escolha inicial; avancar = próxima etapa da narrativa;
+// salto = avanço ou retorno específico dentro da mesma narrativa.
+// trocar e gameover ficam desativados nesta versão de estudo.
 export const perguntas = [
-	{
-		enunciado: "Assim que saiu da escola você se depara com uma nova tecnologia, um chat que consegue responder todas as dúvidas que uma pessoa pode ter, ele também gera imagens e áudios hiper-realistas. Qual o primeiro pensamento?",
+	{ // 0 — pergunta inicial
+		caminho: "inicio",
+		enunciado:
+			"Ao sair da escola, você descobre uma inteligência " +
+			"artificial capaz de criar textos, imagens e vozes. " +
+			"Qual é sua primeira reação?",
 		alternativas: [
 			{
-				texto: "Isso é assustador!",
-				afirmacao: [
-					"No início ficou com medo do que essa tecnologia pode fazer.",
-					"Achou assustador pensar na velocidade em que a tecnologia está avançando."
-				],
-				proxima: 1
+				texto: "Quero experimentar e descobrir o que ela consegue fazer.",
+				afirmacao: ["Decidiu experimentar a inteligência artificial."],
+				tipo: "entrada", proxima: 1
 			},
 			{
-				texto: "Isso é maravilhoso!",
-				afirmacao: [
-					"Ficou animado com as possibilidades que essa tecnologia pode oferecer.",
-					"Imaginou como a inteligência artificial poderia facilitar tarefas do dia a dia."
-				],
-				proxima: 2
+				texto: "Quero entender os riscos antes de utilizar.",
+				afirmacao: ["Decidiu investigar os riscos da inteligência artificial."],
+				tipo: "entrada", proxima: 2
 			}
 		]
 	},
-	{
-		enunciado: "Com a descoberta desta tecnologia, chamada Inteligência Artificial (IA), uma professora de tecnologia da escola decidiu fazer uma sequência de aulas sobre elaIA. No fim de uma aula ela pede que você escreva um trabalho sobre o uso de tecnologia em sala de aula. Qual atitude você toma?",
+	{ // 1 — A1: início da experimentação
+		caminho: "A",
+		enunciado:
+			"Você decide experimentar a ferramenta. Na mesma semana, " +
+			"a professora solicita um trabalho sobre inteligência " +
+			"artificial. Como você pretende começar?",
 		alternativas: [
 			{
-				texto:"Utilizar uma ferramenta de busca na internet que utiliza IA para que ela ajude a encontrar informações relevantes para o trabalho e explique numa linguagem que facilite o entendimento",
-				afirmacao: [
-					"Usou a inteligência artificial como apoio para encontrar e compreender informações.",
-					"Pesquisou com a ajuda da IA e procurou entender o conteúdo antes de escrever."
-				],
-				proxima: 2
+				texto: "Testar uma explicação da IA e separar o que conferir.",
+				afirmacao: ["Testou uma explicação e separou dúvidas para conferir."],
+				tipo: "avancar", proxima: 3
 			},
 			{
-				texto: "Escrever o trabalho com base nas conversas que teve com colegas, algumas pesquisas na internet e conhecimentos próprios sobre o tema.",
-				afirmacao: [
-					"Preferiu reunir ideias próprias e conversar com colegas antes de escrever.",
-					"Combinou pesquisas e conhecimentos prévios para construir o trabalho."
-				],
-				proxima: 3
+				texto: "Usar a pesquisa já conferida em aula e planejar um exemplo.",
+				afirmacao: ["Usou a pesquisa da aula para planejar um exemplo."],
+				tipo: "salto", proxima: 4
+			},
+			{
+				texto: "Investigar um áudio suspeito recebido no bairro.",
+				afirmacao: ["Decidiu investigar um áudio que circulava no bairro."],
+				tipo: "trocar", proxima: 2, disponivel: true
 			}
 		]
 	},
-	{
-		enunciado: "Após a elaboração do trabalho, a professora realizou um debate entre a turma para entender como foi realizada a pesquisa e escrita. Nessa conversa também foi levantado um ponto muito importante: como a IA impacta o trabalho do futuro. Nesse debate, como você se posiciona?",
+	{ // 2 — B1: início da investigação
+		caminho: "B",
+		enunciado:
+			"Antes de experimentar a ferramenta, você procura entender " +
+			"seus riscos. Nesse momento, recebe um áudio suspeito " +
+			"atribuído à diretora da escola. O que você pretende fazer?",
 		alternativas: [
 			{
-				texto:"Me preocupo com as pessoas que perderão seus empregos para máquinas e defendem a importância de proteger os trabalhadores.",
-				afirmacao: [
-					"Defendeu a importância de proteger quem pode perder o emprego para máquinas.",
-					"Preocupou-se com os trabalhadores afetados pela automação."
-				],
-				proxima: 3
+				texto: "Procurar a origem do áudio antes de compartilhar.",
+				afirmacao: ["Procurou a origem do áudio antes de compartilhar."],
+				tipo: "avancar", proxima: 7
 			},
 			{
-				texto:"Defende a ideia de que a IA pode criar novas oportunidades de emprego e melhorar habilidades humanas.",
-				afirmacao: [
-					"Acreditou que a inteligência artificial pode criar novas oportunidades de emprego.",
-					"Viu a tecnologia como uma forma de ampliar as habilidades humanas."
-				],
-				proxima: 4
+				texto: "Consultar diretamente a escola e planejar uma resposta.",
+				afirmacao: ["Consultou a escola diretamente antes de agir."],
+				tipo: "salto", proxima: 8
+			},
+			{
+				texto: "Levar o caso para o trabalho escolar sobre IA.",
+				afirmacao: ["Levou o caso para o trabalho escolar sobre IA."],
+				tipo: "trocar", proxima: 1, disponivel: true
 			}
 		]
 	},
-	{
-		enunciado: "Ao final da discussão, você precisou criar uma imagem no computador que representasse o que pensa sobre IA. E agora?",
+	{ // 3 — A2: conferir informações
+		caminho: "A",
+		enunciado:
+			"A resposta da IA apresenta uma afirmação sem fonte. " +
+			"Qual atitude você toma?",
 		alternativas: [
 			{
-				texto:"Criar uma imagem utilizando uma plataforma de design como o Paint.",
-				afirmacao: [
-					"Escolheu criar a imagem manualmente, usando uma ferramenta de design.",
-					"Preferiu desenhar a própria representação da inteligência artificial."
-				],
-				proxima: 4
+				texto: "Conferir fontes confiáveis e planejar a demonstração.",
+				afirmacao: ["Conferiu fontes antes de planejar a demonstração."],
+				tipo: "avancar", proxima: 4
 			},
 			{
-				texto:"Criar uma imagem utilizando um gerador de imagem de IA.",
-				afirmacao: [
-					"Experimentou um gerador de imagens para transformar suas ideias em uma ilustração.",
-					"Usou a inteligência artificial como ferramenta criativa para produzir a imagem."
-				],
-				proxima: 4
+				texto: "Refazer o teste inicial com uma pergunta mais clara.",
+				afirmacao: ["Retomou o teste inicial com uma pergunta mais clara."],
+				tipo: "salto", proxima: 1
+			},
+			{
+				texto: "Inventar uma fonte e apresentá-la como verdadeira.",
+				afirmacao: ["Inventou uma fonte para sustentar a resposta."],
+				tipo: "gameover",
+				disponivel: true,
+				mensagem:
+					"A fonte inventada foi identificada e o trabalho foi " +
+					"invalidado. Você falhou na missão e precisa recomeçar."
 			}
 		]
 	},
-	{
-		enunciado: " Você tem um trabalho em grupo de biologia para entregar na semana seguinte, o andamento do trabalho está um pouco atrasado e uma pessoa do seu grupo decidiu fazer com ajuda de uma IA. O problema é que o trabalho está totalmente igual ao do chat. O que você faz?",
+	{ // 4 — A3: planejar a demonstração
+		caminho: "A",
+		enunciado:
+			"Você vai demonstrar como uma IA produz respostas. " +
+			"Como preparar o exemplo para a turma?",
 		alternativas: [
 			{
-				texto: "O chat pode ser uma tecnologia muito avançada, mas é preciso manter a atenção pois toda máquina erra, por isso revisar o trabalho e contribuir com as perspectivas pessoais é essencial.",
-				afirmacao: [
-					"Revisou o trabalho e acrescentou perspectivas próprias, lembrando que toda máquina pode errar.",
-					"Defendeu o uso da IA com atenção, revisão e contribuição pessoal."
-				]
+				texto: "Montar um exemplo fictício e pedir uma revisão.",
+				afirmacao: ["Preparou um exemplo fictício para revisão."],
+				tipo: "avancar", proxima: 5
 			},
 			{
-				texto: "Escrever comandos para o chat é uma forma de contribuir com o trabalho, por isso não é um problema utilizar o texto inteiro.",
-				afirmacao: [
-					"Considerou que usar o texto gerado pelo chat já era uma contribuição suficiente.",
-					"Decidiu entregar o texto da IA sem acrescentar alterações próprias."
-				]
+				texto: "Usar um exemplo já revisado em aula e organizar a apresentação.",
+				afirmacao: ["Escolheu um exemplo já revisado em aula."],
+				tipo: "salto", proxima: 6
+			},
+			{
+				texto: "Usar a investigação do áudio para orientar os moradores.",
+				afirmacao: ["Decidiu colaborar com a orientação dos moradores."],
+				tipo: "trocar", proxima: 8, disponivel: true
 			}
 		]
 	},
+	{ // 5 — A4: revisar o material
+		caminho: "A",
+		enunciado:
+			"Um colega observa que seu material não explica os limites " +
+			"da IA. O que você faz?",
+		alternativas: [
+			{
+				texto: "Acrescentar os limites e organizar a apresentação.",
+				afirmacao: ["Acrescentou os limites da ferramenta ao material."],
+				tipo: "avancar", proxima: 6
+			},
+			{
+				texto: "Voltar à conferência das informações para revisar as fontes.",
+				afirmacao: ["Voltou à conferência das fontes para revisar o material."],
+				tipo: "salto", proxima: 3
+			},
+			{
+				texto: "Publicar dados pessoais dos colegas sem autorização.",
+				afirmacao: ["Expôs dados pessoais dos colegas sem autorização."],
+				tipo: "gameover",
+				disponivel: true,
+				mensagem:
+					"A divulgação expôs os colegas e seu projeto foi suspenso. " +
+					"Você falhou na missão e precisa recomeçar."
+			}
+		]
+	},
+	{ // 6 — A5: organizar a apresentação
+		caminho: "A",
+		enunciado:
+			"Antes da apresentação, você decide como organizar " +
+			"o trabalho. Qual será sua atitude?",
+		alternativas: [
+			{
+				texto: "Organizar o exemplo, as fontes e os cuidados necessários.",
+				afirmacao: ["Organizou o exemplo, as fontes e os cuidados necessários."],
+				tipo: "avancar", proxima: 11
+			},
+			{
+				texto: "Voltar à revisão para melhorar a explicação dos limites.",
+				afirmacao: ["Retomou a revisão para melhorar a explicação dos limites."],
+				tipo: "salto", proxima: 5
+			},
+			{
+				texto: "Levar o material ao encontro de orientação dos moradores.",
+				afirmacao: ["Decidiu levar o material ao encontro dos moradores."],
+				tipo: "trocar", proxima: 10, disponivel: true
+			}
+		]
+	},
+	{ // 7 — B2: conferir a origem do áudio
+		caminho: "B",
+		enunciado:
+			"O áudio não tem uma publicação original identificada. " +
+			"Como continuar a investigação?",
+		alternativas: [
+			{
+				texto: "Consultar os canais oficiais da escola.",
+				afirmacao: ["Consultou os canais oficiais da escola."],
+				tipo: "avancar", proxima: 8
+			},
+			{
+				texto: "Retomar a busca inicial e procurar outras versões do áudio.",
+				afirmacao: ["Retomou a busca pela origem e por outras versões do áudio."],
+				tipo: "salto", proxima: 2
+			},
+			{
+				texto: "Acusar publicamente um colega sem qualquer prova.",
+				afirmacao: ["Acusou um colega publicamente sem provas."],
+				tipo: "gameover",
+				disponivel: true,
+				mensagem:
+					"A acusação sem provas prejudicou um colega e interrompeu a " +
+					"investigação. Você falhou na missão e precisa recomeçar."
+			}
+		]
+	},
+	{ // 8 — B3: planejar a orientação
+		caminho: "B",
+		enunciado:
+			"A escola confirma que o áudio é falso. Você decide " +
+			"ajudar os moradores a verificar informações. Como agir?",
+		alternativas: [
+			{
+				texto: "Preparar uma campanha e conferir suas orientações.",
+				afirmacao: ["Preparou uma campanha para orientar os moradores."],
+				tipo: "avancar", proxima: 9
+			},
+			{
+				texto: "Usar o comunicado já revisado pela escola e organizar o encontro.",
+				afirmacao: ["Escolheu o comunicado revisado pela escola para o encontro."],
+				tipo: "salto", proxima: 10
+			},
+			{
+				texto: "Transformar o caso em uma demonstração para a turma.",
+				afirmacao: ["Decidiu transformar o caso em uma demonstração escolar."],
+				tipo: "trocar", proxima: 4, disponivel: true
+			}
+		]
+	},
+	{ // 9 — B4: revisar a campanha
+		caminho: "B",
+		enunciado:
+			"Na revisão da campanha, surge uma dúvida sobre a origem " +
+			"do áudio. Como você responde?",
+		alternativas: [
+			{
+				texto: "Explicar o que foi confirmado e o que permanece desconhecido.",
+				afirmacao: ["Separou os fatos confirmados das informações desconhecidas."],
+				tipo: "avancar", proxima: 10
+			},
+			{
+				texto: "Voltar à investigação para conferir a origem novamente.",
+				afirmacao: ["Retomou a investigação para conferir a origem do áudio."],
+				tipo: "salto", proxima: 7
+			},
+			{
+				texto: "Criar outro áudio falso e divulgá-lo como verdadeiro.",
+				afirmacao: ["Criou e divulgou outro áudio falso como verdadeiro."],
+				tipo: "gameover",
+				disponivel: true,
+				mensagem:
+					"O novo áudio falso causou mais desinformação e a campanha " +
+					"foi interrompida. Você falhou na missão e precisa " +
+					"recomeçar."
+			}
+		]
+	},
+	{ // 10 — B5: organizar o encontro
+		caminho: "B",
+		enunciado:
+			"Você prepara o encontro com os moradores. O que " +
+			"precisa fazer antes de apresentar o material?",
+		alternativas: [
+			{
+				texto: "Organizar o esclarecimento da escola e as dicas de verificação.",
+				afirmacao: ["Organizou o esclarecimento e as dicas de verificação."],
+				tipo: "avancar", proxima: 12
+			},
+			{
+				texto: "Voltar à revisão para melhorar as orientações.",
+				afirmacao: ["Voltou à revisão das orientações da campanha."],
+				tipo: "salto", proxima: 9
+			},
+			{
+				texto: "Expor conversas privadas de moradores sem autorização.",
+				afirmacao: ["Expôs conversas privadas de moradores sem autorização."],
+				tipo: "gameover",
+				disponivel: true,
+				mensagem:
+					"A exposição das conversas privadas encerrou sua " +
+					"participação na campanha. Você falhou na missão e precisa " +
+					"recomeçar."
+			}
+		]
+	},
+	// Posição 11 — substitui o antigo ponto de continuidade A.
+	{
+		caminho: "A",
+		final: "vitoria",
+		enunciado:
+			"Você apresentou seu trabalho à escola, explicou os benefícios " +
+			"e os limites da IA e demonstrou os cuidados necessários. " +
+			"A missão foi concluída com sucesso. Você venceu!",
+		alternativas: []
+	},
+	// Posição 12 — substitui o antigo ponto de continuidade B.
+	{
+		caminho: "B",
+		final: "vitoria",
+		enunciado:
+			"Você apresentou o esclarecimento da escola aos moradores " +
+			"e ensinou como verificar conteúdos suspeitos. " +
+			"A missão foi concluída com sucesso. Você venceu!",
+		alternativas: []
+	}
 ];

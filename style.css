@@ -86,3 +86,40 @@ button:hover {
     background-color: var(--cor-destaque);
     color: var(--cor-principal);
 }
+
+button.desativado,
+button:disabled {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+button.desativado:hover,
+button:disabled:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+}
+
+.caixa-alternativas button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.texto-resultado {
+    white-space: pre-line;
+}
+
+.tela-creditos {
+    display: none;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.creditos-btn {
+    display: none;
+}
+
+.tela-creditos p {
+    margin: 12px 0;
+}

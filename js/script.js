@@ -139,6 +139,8 @@ function mostraVitoria(mensagem) {
         mensagem + "\n\nSeu percurso nesta partida:\n" + historiaFinal;
     botaoJogarNovamente.style.display = "none";
     botaoCreditos.style.display = "inline-block";
+    botaoCreditos.disabled = false;
+    botaoCreditos.textContent = "Ver créditos";
     telaCreditos.style.display = "none";
 }
 

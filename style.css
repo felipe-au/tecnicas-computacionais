@@ -116,10 +116,6 @@ button:disabled:hover {
     line-height: 1.6;
 }
 
-.creditos-btn {
-    display: none;
-}
-
 .tela-creditos p {
     margin: 12px 0;
 }
